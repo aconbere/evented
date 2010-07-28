@@ -1,8 +1,8 @@
 {
-    "name": "event-emitter",
+    "name": "evented",
     "author": "Anders Conbere",
     "description": "A concise event emitter constructor",
-    "keywords": ["event"],
+    "keywords": ["event", "evented"],
     "version": "0.0.1",
-    "main": "./lib/event-emitter.js",
+    "main": "./lib/evented.js",
 }
