@@ -20,10 +20,14 @@ minitest.context("Evented", function () {
   });
 
   this.assertion("bindOnce should only be called once", function (test) {
-    this.evented.bindOnce("x", function () {});
+    var called = 0;
+    this.evented.bindOnce("x", function () { called++; });
     assert.ok(this.evented.listenersOnce.x.length > 0);
     this.evented.trigger("x");
+    assert.equal(called, 1);
     assert.ok(this.evented.listenersOnce.x.length == 0);
+    this.evented.trigger("x");
+    assert.equal(called, 1);
     test.finished();
   });
 
